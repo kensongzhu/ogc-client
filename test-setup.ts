@@ -4,7 +4,6 @@ import CacheMock from 'browser-cache-mock';
 import 'isomorphic-fetch';
 import { Buffer } from './node_modules/buffer/index.js';
 
-// @ts-expect-error Buffer is not compatible with the globalThis.Buffer type
 globalThis.Buffer = Buffer;
 
 // mock the global fetch API

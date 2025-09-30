@@ -89,11 +89,9 @@ export function findChildElement(
  */
 export function getChildrenElement(element: XmlElement) {
   return element && Array.isArray(element.children)
-    ? [
-        ...(element.children.filter(
+    ? (element.children.filter(
           (el) => el instanceof XmlElement
-        ) as XmlElement[]),
-      ]
+        ) as XmlElement[])
     : [];
 }
 

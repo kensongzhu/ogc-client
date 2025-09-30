@@ -1,0 +1,49 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "builtin": true,
+    "node": true,
+    "browser": true,
+    "es2021": true
+  },
+  "globals": {},
+  "ignorePatterns": ["**/dist/**", "**/coverage/**"],
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import"],
+  "jsPlugins": null,
+  "categories": {
+    "correctness": "warn",
+    "perf": "warn"
+  },
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    // "sort-imports": "error",
+    "import/extensions": ["error", "always"]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.vue"],
+      "plugins": ["vue"],
+      "rules": {
+        "import/extensions": ["off"]
+      }
+    },
+    {
+      "files": ["jest*.cjs"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": ["off"],
+        "@typescript-eslint/no-require-imports": ["off"],
+        "import/extensions": ["off"]
+      }
+    }
+  ]
+}
