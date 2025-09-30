@@ -1,7 +1,6 @@
-import {
+import type {
   CollectionParameter,
   CollectionParameterType,
-  CollectionParameterTypes,
   ConformanceClass,
   OgcApiCollectionInfo,
   OgcApiDocument,
@@ -12,6 +11,7 @@ import {
   OgcStyleFull,
   TileMatrixSet,
 } from './model.js';
+import { CollectionParameterTypes } from './model.js';
 import { assertHasLinks } from './link-utils.js';
 import { EndpointError } from '../shared/errors.js';
 import {

@@ -1,7 +1,7 @@
 import { parseXmlString } from './xml-utils.js';
 import { EndpointError } from './errors.js';
 import { decodeString } from './encoding.js';
-import { FetchOptions } from './models.js';
+import type { FetchOptions } from './models.js';
 
 const fetchPromises: Map<string, Promise<Response>> = new Map();
 

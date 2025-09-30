@@ -1,5 +1,5 @@
 // src/tms/parser.ts
-import {
+import type {
   TileMapInfo,
   TileMapService,
   TmsEndpointInfo,

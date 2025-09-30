@@ -1,6 +1,6 @@
 import { setQueryParams } from '../shared/http-utils.js';
-import { BoundingBox, CrsCode, MimeType } from '../shared/models.js';
-import { WmsVersion } from './model.js';
+import type { BoundingBox, CrsCode, MimeType } from '../shared/models.js';
+import type { WmsVersion } from './model.js';
 
 /**
  * Generates an URL for a GetMap operation

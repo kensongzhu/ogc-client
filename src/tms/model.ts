@@ -1,4 +1,4 @@
-import { BoundingBox, CrsCode, MimeType } from '../shared/models.js';
+import type { BoundingBox, CrsCode, MimeType } from '../shared/models.js';
 
 export interface TileMapService {
   version: string;

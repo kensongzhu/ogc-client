@@ -1,6 +1,4 @@
-// @ts-expect-error ts-migrate(7016)
 import wmsCapabilities from '../../fixtures/wms/capabilities-brgm-1-3-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import wfsCapabilities from '../../fixtures/wfs/capabilities-geo2france-2-0-0.xml';
 import WmsEndpoint from '../wms/endpoint.js';
 import WfsEndpoint from '../wfs/endpoint.js';

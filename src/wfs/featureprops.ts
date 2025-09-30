@@ -9,7 +9,7 @@ import {
   stripNamespace,
 } from '../shared/xml-utils.js';
 import { XmlDocument, XmlElement } from '@rgrove/parse-xml';
-import {
+import type {
   WfsFeatureTypeFull,
   WfsFeatureTypePropsDetails,
   WfsFeatureWithProps,

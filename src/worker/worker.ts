@@ -9,8 +9,8 @@ import {
   parseFeatureProps,
 } from '../wfs/featureprops.js';
 import { generateGetFeatureUrl } from '../wfs/url.js';
-import { FetchOptions } from '../shared/models.js';
-import { WfsFeatureTypeFull, WfsVersion } from '../wfs/model.js';
+import type { FetchOptions } from '../shared/models.js';
+import type { WfsFeatureTypeFull, WfsVersion } from '../wfs/model.js';
 
 addTaskHandler('parseWmsCapabilities', globalThis, ({ url }: { url: string }) =>
   queryXmlDocument(url)

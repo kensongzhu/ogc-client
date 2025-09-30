@@ -1,12 +1,8 @@
 import WmtsEndpoint from './endpoint.js';
 import { useCache } from '../shared/cache.js';
-// @ts-expect-error ts-migrate(7016)
 import ogcsample from '../../fixtures/wmts/ogcsample.xml';
-// @ts-expect-error ts-migrate(7016)
 import arcgis from '../../fixtures/wmts/arcgis.xml';
-// @ts-expect-error ts-migrate(7016)
 import ign from '../../fixtures/wmts/ign.xml';
-// @ts-expect-error ts-migrate(7016)
 import capabilitiesWgs84 from '../../fixtures/wmts/capabilities_wgs84.xml';
 import { buildOpenLayersTileGrid } from './ol-tilegrid.js';
 

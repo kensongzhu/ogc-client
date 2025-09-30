@@ -4,7 +4,7 @@ import {
   extractEndpointInfo,
   extractTileMapReferences,
 } from './parser.js';
-import { TileMapService } from './model.js';
+import type { TileMapService } from './model.js';
 import { parseXmlString } from '../shared/xml-utils.js';
 
 describe('TMS parser utilities', () => {

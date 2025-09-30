@@ -1,16 +1,16 @@
 import { parseWmsCapabilities } from '../worker/index.js';
 import { useCache } from '../shared/cache.js';
 import { setQueryParams } from '../shared/http-utils.js';
-import {
+import type {
   BoundingBox,
   CrsCode,
   GenericEndpointInfo,
-  type HttpMethod,
+  HttpMethod,
   MimeType,
-  type OperationName,
-  type OperationUrl,
+  OperationName,
+  OperationUrl,
 } from '../shared/models.js';
-import { WmsLayerFull, WmsLayerSummary, WmsVersion } from './model.js';
+import type { WmsLayerFull, WmsLayerSummary, WmsVersion } from './model.js';
 import { generateGetMapUrl } from './url.js';
 
 /**

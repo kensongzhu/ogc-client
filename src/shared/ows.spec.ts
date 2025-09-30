@@ -1,8 +1,5 @@
-// @ts-expect-error ts-migrate(7016)
 import capabilitiesWfs110 from '../../fixtures/wfs/capabilities-pigma-1-1-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import capabilitiesWfs200 from '../../fixtures/wfs/capabilities-pigma-2-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import capabilitiesWmts from '../../fixtures/wmts/ogcsample.xml';
 import { parseXmlString } from './xml-utils.js';
 import { readProviderFromCapabilities } from './ows.js';

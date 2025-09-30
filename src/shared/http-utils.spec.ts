@@ -7,7 +7,6 @@ import {
 } from './http-utils.js';
 import { fetchDocument } from '../ogc-api/link-utils.js';
 import WfsEndpoint from '../wfs/endpoint.js';
-// @ts-expect-error ts-migrate(7016)
 import capabilities200 from '../../fixtures/wfs/capabilities-pigma-2-0-0.xml';
 
 jest.useFakeTimers();

@@ -5,6 +5,7 @@ import tseslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
 import n from 'eslint-plugin-n';
 
+/** @type {import('eslint/').Linter.Config[]} */
 export default [
   {
     ignores: ['**/dist/', '**/coverage/'],

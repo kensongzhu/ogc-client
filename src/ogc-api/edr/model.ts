@@ -1,4 +1,4 @@
-import { DateTimeParameter } from '../../shared/models.js';
+import type { DateTimeParameter } from '../../shared/models.js';
 
 /**
  * A Well Known Text (WKT) string

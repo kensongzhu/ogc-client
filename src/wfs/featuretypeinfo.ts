@@ -4,7 +4,7 @@ import {
   getRootElement,
 } from '../shared/xml-utils.js';
 import { XmlDocument } from '@rgrove/parse-xml';
-import {
+import type {
   FeatureGeometryType,
   FeaturePropertyType,
   WfsFeatureTypeFull,

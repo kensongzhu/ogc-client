@@ -1,16 +1,9 @@
-// @ts-expect-error ts-migrate(7016)
 import getFeatureCities100 from '../../fixtures/wfs/getfeature-props-cities-1-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import getFeatureCities110 from '../../fixtures/wfs/getfeature-props-cities-1-1-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import getFeatureCities200 from '../../fixtures/wfs/getfeature-props-cities-2-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import getFeatureStates100 from '../../fixtures/wfs/getfeature-props-states-1-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import getFeatureStates110 from '../../fixtures/wfs/getfeature-props-states-1-1-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import getFeatureStates200 from '../../fixtures/wfs/getfeature-props-states-2-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import getFeatureStates200Geojson from '../../fixtures/wfs/getfeature-props-states-2-0-0.json';
 import {
   computeFeaturePropsDetails,
@@ -18,7 +11,7 @@ import {
   parseFeaturePropsGeojson,
 } from './featureprops.js';
 import { parseXmlString } from '../shared/xml-utils.js';
-import { WfsFeatureTypeFull } from './model.js';
+import type { WfsFeatureTypeFull } from './model.js';
 
 describe('feature props utils', () => {
   describe('parseFeatureProps and parseFeaturePropsGeojson', () => {

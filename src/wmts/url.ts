@@ -1,5 +1,5 @@
-import { WmtsRequestEncoding } from './model.js';
-import { MimeType } from '../shared/models.js';
+import type { WmtsRequestEncoding } from './model.js';
+import type { MimeType } from '../shared/models.js';
 import { setQueryParams } from '../shared/http-utils.js';
 
 export function generateGetTileUrl(

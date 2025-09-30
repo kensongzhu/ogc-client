@@ -1,4 +1,4 @@
-import { zParameterToString, ZParameter } from './model.js';
+import { zParameterToString, type ZParameter } from './model.js';
 
 describe('zParameterToString', () => {
   test('single level', () => {

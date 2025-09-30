@@ -11,14 +11,14 @@ import {
 } from '../shared/xml-utils.js';
 import { simplifyEpsgUrn } from '../shared/crs-utils.js';
 import { XmlDocument, XmlElement } from '@rgrove/parse-xml';
-import {
+import type {
   BoundingBox,
   GenericEndpointInfo,
   MimeType,
-  type OperationName,
-  type OperationUrl,
+  OperationName,
+  OperationUrl,
 } from '../shared/models.js';
-import { WfsFeatureTypeInternal, WfsVersion } from './model.js';
+import type { WfsFeatureTypeInternal, WfsVersion } from './model.js';
 
 /**
  * Will read the operation URLS from the capabilities doc

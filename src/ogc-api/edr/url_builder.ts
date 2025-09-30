@@ -1,11 +1,11 @@
-import { CrsCode } from '../../shared/models.js';
-import {
+import type { CrsCode } from '../../shared/models.js';
+import type {
   DataQueryType,
   EdrParameterInfo,
   OgcApiCollectionInfo,
 } from '../model.js';
 import { DateTimeParameterToEDRString } from './helpers.js';
-import {
+import type {
   bboxWithVerticalAxis,
   bboxWithoutVerticalAxis,
   optionalAreaParams,
@@ -16,8 +16,9 @@ import {
   optionalRadiusParams,
   optionalTrajectoryParams,
   WellKnownTextString,
-  zParameterToString,
 } from './model.js';
+
+import { zParameterToString } from './model.js';
 
 /** Builds query URLs according to the OGC EDR specification
  * @see https://docs.ogc.org/is/19-086r6/19-086r6.html

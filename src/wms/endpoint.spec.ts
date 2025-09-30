@@ -1,8 +1,5 @@
-// @ts-expect-error ts-migrate(7016)
 import capabilities130 from '../../fixtures/wms/capabilities-brgm-1-3-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import capabilitiesStates from '../../fixtures/wms/capabilities-states-1-3-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import exceptionReportWfs from '../../fixtures/wms/service-exception-report-wfs.xml';
 import WmsEndpoint from './endpoint.js';
 import { useCache } from '../shared/cache.js';

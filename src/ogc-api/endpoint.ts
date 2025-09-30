@@ -12,7 +12,7 @@ import {
   parseFullStyleInfo,
   parseTileMatrixSets,
 } from './info.js';
-import {
+import type {
   ConformanceClass,
   OgcApiCollectionInfo,
   OgcApiCollectionItem,
@@ -34,7 +34,7 @@ import {
   hasLinks,
 } from './link-utils.js';
 import { EndpointError } from '../shared/errors.js';
-import {
+import type {
   BoundingBox,
   CrsCode,
   DateTimeParameter,

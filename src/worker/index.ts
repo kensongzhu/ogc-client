@@ -1,18 +1,22 @@
 import { sendTaskRequest } from './utils.js';
-import {
+import type {
   GenericEndpointInfo,
   OperationName,
   OperationUrl,
 } from '../shared/models.js';
 import { setFetchOptionsUpdateCallback } from '../shared/http-utils.js';
-import { WmtsEndpointInfo, WmtsLayer, WmtsMatrixSet } from '../wmts/model.js';
-import {
+import type {
+  WmtsEndpointInfo,
+  WmtsLayer,
+  WmtsMatrixSet,
+} from '../wmts/model.js';
+import type {
   WfsFeatureTypeFull,
   WfsFeatureTypeInternal,
   WfsFeatureTypePropsDetails,
   WfsVersion,
 } from '../wfs/model.js';
-import { WmsLayerFull, WmsVersion } from '../wms/model.js';
+import type { WmsLayerFull, WmsVersion } from '../wms/model.js';
 // @ts-expect-error TS2307
 // eslint-disable-next-line n/file-extension-in-import
 import OgcClientWorker from './worker?worker&inline';

@@ -1,16 +1,9 @@
-// @ts-expect-error ts-migrate(7016)
 import wfsCapabilities200 from '../../fixtures/wfs/capabilities-pigma-2-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import wfsException100 from '../../fixtures/wfs/service-exception-report-1-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import wfsException110 from '../../fixtures/wfs/exception-report-1-1-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import wfsException200 from '../../fixtures/wfs/exception-report-2-0-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import wmsException110 from '../../fixtures/wms/service-exception-report-1-1-0.xml';
-// @ts-expect-error ts-migrate(7016)
 import wmsException111 from '../../fixtures/wms/service-exception-report-1-1-1.xml';
-// @ts-expect-error ts-migrate(7016)
 import wmsException130 from '../../fixtures/wms/service-exception-report-1-3-0.xml';
 import {
   check,

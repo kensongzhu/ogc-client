@@ -1,6 +1,11 @@
 import { setQueryParams } from '../shared/http-utils.js';
-import { BoundingBox, CrsCode, FieldSort, MimeType } from '../shared/models.js';
-import { WfsVersion } from './model.js';
+import type {
+  BoundingBox,
+  CrsCode,
+  FieldSort,
+  MimeType,
+} from '../shared/models.js';
+import type { WfsVersion } from './model.js';
 
 /**
  * Generates an URL for a GetFeature operation

@@ -1,13 +1,13 @@
 import { XmlDocument, XmlElement } from '@rgrove/parse-xml';
 import { hasInvertedCoordinates } from '../shared/crs-utils.js';
-import {
+import type {
   BoundingBox,
   CrsCode,
   GenericEndpointInfo,
   LayerStyle,
-  type Provider,
-  type OperationName,
-  type OperationUrl,
+  Provider,
+  OperationName,
+  OperationUrl,
 } from '../shared/models.js';
 import {
   findChildElement,
@@ -19,7 +19,7 @@ import {
   getRootElement,
   stripNamespace,
 } from '../shared/xml-utils.js';
-import { WmsLayerAttribution, WmsLayerFull, WmsVersion } from './model.js';
+import type { WmsLayerAttribution, WmsLayerFull, WmsVersion } from './model.js';
 
 /**
  * Will read all operation URLs from the capabilities doc

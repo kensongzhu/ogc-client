@@ -1,6 +1,6 @@
 import { sharedFetch } from '../shared/http-utils.js';
 import { parseTileMapServiceXML, parseTileMapXML } from './parser.js';
-import { TileMapInfo, TileMapService } from './model.js';
+import type { TileMapInfo, TileMapService } from './model.js';
 import { XmlDocument } from '@rgrove/parse-xml';
 import { getRootElement, parseXmlString } from '../shared/xml-utils.js';
 import { getParentPath, getBaseUrl } from '../shared/url-utils.js';

@@ -1,8 +1,8 @@
-import {
+import type {
   BoundingBox,
   CrsCode,
   LayerStyle,
-  type MetadataURL,
+  MetadataURL,
 } from '../shared/models.js';
 
 export type WmsLayerAttribution = {

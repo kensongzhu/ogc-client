@@ -10,13 +10,13 @@ import {
   generateGetFeatureUrl,
 } from './url.js';
 import { stripNamespace } from '../shared/xml-utils.js';
-import {
+import type {
   GenericEndpointInfo,
-  type HttpMethod,
-  type OperationName,
-  type OperationUrl,
+  HttpMethod,
+  OperationName,
+  OperationUrl,
 } from '../shared/models.js';
-import {
+import type {
   WfsFeatureTypeBrief,
   WfsFeatureTypeInternal,
   WfsFeatureTypeSummary,
