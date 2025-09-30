@@ -15,7 +15,7 @@ describe('parse XML documents with alternate encodings', () => {
 
       const pathFromRoot = new URL(fileUrl).pathname;
       const filePath = join(__dirname, '../..', pathFromRoot);
-      const buffer: ArrayBuffer = readFileSync(filePath);
+      const buffer = readFileSync(filePath) as unknown as ArrayBuffer;
       const headers = responseCharset
         ? {
             'Content-Type': `application/xml; charset=${responseCharset}`,

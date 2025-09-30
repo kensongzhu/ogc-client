@@ -195,7 +195,7 @@ export default class WmtsEndpoint {
   ): Promise<WMTSTileGrid | null> {
     if (!this._layers) return null;
     if (!this.tileGridModule) {
-      this.tileGridModule = import('./ol-tilegrid').catch((e) => {
+      this.tileGridModule = import('./ol-tilegrid.js').catch((e) => {
         console.warn(
           `[ogc-client] Cannot use getOpenLayersTileGrid, the 'ol' package is probably not available.\n`,
           e

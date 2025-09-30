@@ -9,8 +9,8 @@ import { Buffer } from './node_modules/buffer/index.js';
 globalThis.Buffer = Buffer;
 
 // mock the global fetch API
-globalThis.fetchPreHandler = (url, options) => {};
-globalThis.fetchResponseFactory = (url, options) => '<empty></empty>';
+globalThis.fetchPreHandler = (_url, _options) => {};
+globalThis.fetchResponseFactory = (_url, _options) => '<empty></empty>';
 globalThis.originalFetch = globalThis.fetch;
 globalThis.mockFetch = jest.fn().mockImplementation(async (url, options) => {
   const preResult = await globalThis.fetchPreHandler(url, options);
@@ -37,7 +37,7 @@ globalThis.fetch = globalThis.mockFetch;
 
 // reset fetch response to XML by default
 beforeEach(() => {
-  globalThis.fetchResponseFactory = (url) => '<empty></empty>';
+  globalThis.fetchResponseFactory = (_url) => '<empty></empty>';
 });
 
 globalThis.caches = {

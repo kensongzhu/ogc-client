@@ -85,7 +85,7 @@ export function normalizeUrl(url: string): string {
     }
     urlObj.hostname = urlObj.hostname.toLowerCase();
     return urlObj.toString();
-  } catch (err) {
+  } catch (_err) {
     return url;
   }
 }
