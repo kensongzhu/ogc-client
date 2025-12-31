@@ -1,7 +1,9 @@
 import {
   _resetCache,
+  _resetCacheCheck,
   clearCache,
   getCache,
+  isCacheSupported,
   purgeOutdatedEntries,
   readCacheEntry,
   setCacheExpiryDuration,
@@ -129,6 +131,8 @@ describe('cache utils', () => {
     let originalCache;
     beforeEach(async () => {
       _resetCache();
+      _resetCacheCheck();
+
       originalCache = globalThis.caches;
       delete globalThis.caches;
       await storeCacheEntry({ old: true }, 'test', 'entry', '06');
@@ -150,6 +154,8 @@ describe('cache utils', () => {
     let originalFn;
     beforeEach(async () => {
       _resetCache();
+      _resetCacheCheck();
+
       originalFn = globalThis.caches.open;
       globalThis.caches.open = () => Promise.reject(new Error('not allowed'));
       await storeCacheEntry({ old: true }, 'test', 'entry', '07');
@@ -170,6 +176,8 @@ describe('cache utils', () => {
     let result;
     beforeEach(async () => {
       _resetCache();
+      _resetCacheCheck();
+
       const cache = await getCache();
       cache.put = () => Promise.reject(new Error('something went wrong'));
       await storeCacheEntry({ old: true }, 'test', 'entry', '08');
@@ -184,6 +192,22 @@ describe('cache utils', () => {
     });
     it('does not use cache, does not fail', () => {
       expect(result).toEqual({ fresh: true });
+    });
+  });
+
+  describe('check cache API support in runtime', () => {
+    beforeEach(() => {
+      _resetCacheCheck();
+    });
+
+    it('returns true when Cache API is available', async () => {
+      await expect(isCacheSupported()).resolves.toBe(true);
+    });
+
+    it('caches the result after first check', async () => {
+      const result1 = await isCacheSupported();
+      const result2 = await isCacheSupported();
+      expect(result1).toBe(result2);
     });
   });
 });

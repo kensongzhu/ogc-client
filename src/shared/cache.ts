@@ -17,14 +17,66 @@ export function getCacheExpiryDuration() {
   return cacheExpiryDuration;
 }
 
+let cacheCheckPromise: Promise<boolean> | undefined = undefined;
+
+/**
+ * Checks if the Cache API is supported in the runtime
+ *
+ * @see {@link https://runtime-compat.unjs.io/#Cache}
+ * @see {@link https://runtime-compat.unjs.io/#CacheStorage}
+ *
+ * @returns Promise that resolves to true if the Cache API is supported, false otherwise
+ */
+export async function isCacheSupported(): Promise<boolean> {
+  if (cacheCheckPromise) {
+    return cacheCheckPromise;
+  }
+
+  cacheCheckPromise = (async () => {
+    // check if CacheStorage API is supported
+    const hasStorage =
+      !!globalThis.caches &&
+      typeof globalThis.caches === 'object' &&
+      typeof globalThis.caches.open === 'function';
+
+    if (!hasStorage) {
+      return false;
+    }
+
+    const cacheName = '[ogc-client-cache-check]';
+
+    try {
+      const entry = await globalThis.caches.open(cacheName);
+
+      // check if the Cache API is supported
+      const hasCache =
+        !!entry &&
+        typeof entry.put === 'function' &&
+        typeof entry.match === 'function' &&
+        typeof entry.keys === 'function' &&
+        typeof entry.delete === 'function';
+
+      if (typeof globalThis.caches.delete === 'function') {
+        await globalThis.caches.delete(cacheName);
+      }
+
+      return hasCache;
+    } catch {
+      return false;
+    }
+  })();
+
+  return cacheCheckPromise;
+}
+
 let cachePromise: Promise<Cache | null>;
-export function getCache() {
+export async function getCache() {
   if (cachePromise !== undefined) return cachePromise;
-  if (!('caches' in globalThis)) {
+  if (!(await isCacheSupported())) {
     cachePromise = Promise.resolve(null);
     return cachePromise;
   }
-  cachePromise = caches.open('ogc-client').catch((e) => {
+  cachePromise = globalThis.caches.open('ogc-client').catch((e) => {
     console.info(
       '[ogc-client] Cache could not be accessed for the following reason:',
       e
@@ -37,6 +89,9 @@ export function getCache() {
 // use only in tests
 export function _resetCache() {
   cachePromise = undefined;
+}
+export function _resetCacheCheck() {
+  cacheCheckPromise = undefined;
 }
 
 export async function storeCacheEntry(object: unknown, ...keys: string[]) {
